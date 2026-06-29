@@ -572,7 +572,7 @@ class payment{
         return "\npay:" +pay;
     }
 }
-*/
+
 public class Main5{
     public static void main(String[]args){
         driver r1=new driver("viraj",4.5);
@@ -599,7 +599,7 @@ class driver{
     }    
     public String toString(){
         return "\nname:" +name +"("+rating+")";
-    }
+++    }
 }
 class ride{
     private driver d;
@@ -638,4 +638,103 @@ class carride extends ride{
         return super.toString() +"\ncartype:" +ctype;
     } 
 
+}
+*/
+public class Main5{
+    public static void main(String[]args){
+        employee e1=new dev("viraj",152,15000,"java");
+        employee e2=new manager("shubahm",152,46000,5);
+        System.out.println(e1);
+        e1.work();
+        e1.setsalary(-5000);
+        System.out.println(e2);
+        e2.work();
+        
+
+
+
+    }
+}
+class employee{
+    private String name;
+    private int id;
+    private int salary;
+    employee(String name, int id, int salary){
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+    }
+    public void setname(String name){
+        this.name=name;
+    }
+    public String getname(){
+        return name;
+    }public void setid(int id){
+        this.id=id;
+
+    }
+    public int getid(){
+        return id;
+    }public void setsalary(int salary){
+        if(salary<0){
+            System.out.println("invalid salary");
+
+        }else{
+            this.salary=salary;
+        }
+
+    }
+    public void work(){
+        System.out.println("employee is working");
+    }
+    public String toString(){
+        return "name:"+name +"\nid: "+id +"\nsalary:"+salary;
+    }
+
+
+}
+class dev extends employee{
+    private String lan;
+    dev(String name, int id, int salary, String lan){
+        super(name,id,salary);
+        this.lan=lan;
+    }
+    public void setlan(String lan){
+        this.lan=lan;
+    }
+    public String getlan(){
+        return lan;
+
+    }
+    @Override
+    public void work(){
+        System.out.println("developer is writing code");
+    }
+    public String toString(){
+        return super.toString() +"\nlan:" +lan;
+    }
+
+
+}
+class manager extends employee{
+    private int teams;
+    manager(String name,int id,int salary,int teams){
+        super(name,id,salary);
+        this.teams=teams;
+
+    }
+    public void setteams(int teams){
+        this.teams=teams;
+    }
+    public int getteams(){
+        return teams;
+    }
+    @Override
+    public void work(){
+        System.out.println("manager is conduting  meeting");
+
+    }
+    public String toString(){
+        return super.toString()+"\nteams sixe:"+teams;
+    }
 }

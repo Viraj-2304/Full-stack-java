@@ -1,4 +1,4 @@
-4/* 
+/* 
 public class Main6{    //interface
     public static void main(String[]args){
         playable p1=new music();
@@ -231,6 +231,50 @@ class dineinorder extends order implements orderservice{
     }
 
 }
+    public class Main6{
+    public static void main(String[]args){
+        cloud c1=new gdrive();
+        cloud c2=new dropbox();
+        c1.dfile();
+        c1.ufile();
+        c1.sfile();
+        c2.dfile();
+        c2.ufile();
+        c2.sfile();
+        cloud.support();
+
+
+
+    }
+}
+interface cloud{
+    void ufile();
+    void dfile();
+    default void sfile(){
+        System.out.println("Storage Capacity : 15 GB");
+    }
+    static void support(){
+        System.out.println("Cloud Support : support@cloud.com");
+    }
+}
+class gdrive implements cloud{
+    public void ufile(){
+        System.out.println("upload the file");
+    }
+    public void dfile(){
+        System.out.println("download the file");
+    }
+
+}
+class dropbox implements cloud{
+    public void ufile(){
+        System.out.println("upload the file");
+    }
+    public void dfile(){
+        System.out.println("download the file");
+    }
+
+}
 
 //Abstract class
 public class Main6{
@@ -249,19 +293,142 @@ class dog extends animal{
         System.out.println("dog barks");
     }
 }
-*/
+
 public class Main6{
+public static void main(String[]args){
+    vehicle v1=new car("toyoto",150222);
+    vehicle v2=new bike("honda",15000);
+    v1.display();
+    v1.start();
+    v2.display();
+    v2.start();
+
+
+}
+}abstract class vehicle{
+    protected String brand;
+    private int prize;
+    vehicle(String brand,int prize){
+        this.brand=brand;
+        this.prize=prize;
+    }
+    public void display(){
+        System.out.println("brand :"+brand);
+        System.out.println("prize:"+prize);
+    }
+    abstract void start();
+}
+class car extends vehicle{
+    car(String brand,int prize){
+        super(brand,prize);
+    }
+    void start(){
+        System.out.println("car is starting");
+    }
+
+}
+class bike extends vehicle{
+    bike(String brand,int prize){
+        super(brand,prize);
+    }
+    void start(){
+        System.out.println("bike is starting");
+    }
+
+}
     public static void main(String[]args){
-        car c=new car();
-        car.engine e=c.new engine();
-        e.start();
+        
+        shape s1=new circle("red",5);
+        shape s2=new rectangle("blue",5,6);
+        s1.display();
+        s1.carea();
+        s2.display();
+        s2.carea();
 
     }
 }
-class car{
-    class engine{
-        void start(){
-            System.out.println("car strted");
-        }
+abstract class shape{
+    private String color;
+    shape(String color){
+        this.color=color;
     }
+    public void display(){
+        System.out.println("color:"+color);
+    }
+    abstract void carea();
+
+}
+class circle extends shape{
+    private int radius;
+    circle(String color,int radius){
+        super(color);
+        this.radius=radius;
+    }
+    void carea(){
+        System.out.println("area of circle"+(3.14*radius*radius));
+    }
+   
+} 
+class rectangle extends shape{
+    private int length;
+    private int width;
+    rectangle(String color,int length,int width){
+        super(color);
+        this.length=length;
+        this.width=width;
+    }
+    void carea(){
+        System.out.println("area of rectangle"+(3.14*length*width));
+    }
+   
+} 
+
+*/
+public class Main6{
+    public static void main(String[]args){
+        product p1=new mobil("samsung",25000);
+        product p2=new laptop("asus",25000);
+         p1.display();
+         p1.discount();
+         p2.display();
+         p2.discount();
+    
+
+    }
+}
+abstract class product{
+    protected String name;
+    protected int prize;
+    product(String name,int prize){
+        this.name=name;
+        this.prize=prize;
+    }
+    public void display(){
+        System.out.println("product name:"+name);
+        System.out.println("prize:"+prize);
+
+
+    }
+    abstract void discount();
+
+
+}
+class mobil extends product{
+    mobil(String name,int prize){
+        super(name,prize);
+    }
+    void discount(){
+        System.out.println("mobile discount :" + (prize-2000));
+    }
+}
+class laptop extends product{
+    laptop(String name,int prize){
+        super(name,prize);
+    
+    }
+    void discount(){
+        System.out.println("laptop discount :" +(prize-200));
+    }
+    
+
 }

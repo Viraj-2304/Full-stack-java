@@ -1,5 +1,6 @@
 public class Main2 {
     public static void main(String[] args){
+        int x=10;
 
         // for postfix and prefix
         System.out.println(++x);

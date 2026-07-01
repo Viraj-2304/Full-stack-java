@@ -1,3 +1,4 @@
+/*
 public class Main3{
     public static void main(String[]args){
         int x= 52; //numbers
@@ -186,8 +187,8 @@ System.out.println("Reversed = " + rev);
             count++;
         }System.out.println("count of numbers is:" +count);
        }
-}
-public class Main{
+}*/
+public class Main3{
     public static void main(String[]args) {
         String product="laptop";
         int quantity = 3;

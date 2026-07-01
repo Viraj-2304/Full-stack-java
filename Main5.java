@@ -501,8 +501,8 @@ class bike extends vehicle{
 }
    
 
-// This is e.g of composition + inheritance + encapsulation + polymorphism
-//understand who has what? who is what?
+//This is e.g of composition + inheritance + encapsulation + polymorphism
+//understand who has what? who is what??
 // first composition then inheritance then encapsulation then polymorphism
 
 

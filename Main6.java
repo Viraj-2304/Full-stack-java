@@ -383,7 +383,7 @@ class rectangle extends shape{
    
 } 
 
-*/
+
 public class Main6{
     public static void main(String[]args){
         product p1=new mobil("samsung",25000);
@@ -430,5 +430,73 @@ class laptop extends product{
         System.out.println("laptop discount :" +(prize-200));
     }
     
+
+}*/
+public class Main6{
+    public static void main(String[]args){
+        order o1=new dorder("viraj",102,156.0,"kalyan east");
+        order o2=new diorder("ved",132,1561.3,5);
+        System.out.println(o1);
+        o1.process();
+        System.out.println(o2);
+        o2.process();
+    }
+}
+abstract class order{
+    private String name;
+    private int id;
+    private double amount;
+    order(String name,int id,double amount){
+        this.name=name;
+        this.id=id;
+        this.amount=amount;
+    }
+    public String getname(){
+        return name;
+    }
+    public int getid(){
+        return id;
+    }
+    public double getamount(){
+        return amount;
+    }    
+    public void displayorder(){
+        System.out.println("name :"+name);
+        System.out.println("id :"+id);
+        System.out.println("amount :"+amount);
+    }
+    public String toString(){
+        return "name:"+name +"\nid:"+id +"\namount:"+amount;
+    }
+    abstract void process();
+}
+class dorder extends order{
+    private String daddress;
+    dorder(String name,int id,double amount,String daddress){
+        super(name,id,amount);
+        this.daddress=daddress;
+    }
+    void process(){
+        System.out.println("order is out of delievry");
+    }
+    public String toString(){
+        return super.toString() +"\ndaddress:"+daddress;
+    }
+
+
+}
+class diorder extends order{
+    private int tableno;
+    diorder(String name,int id,double amount,int tableno){
+        super(name,id,amount);
+        this.tableno=tableno;
+    }
+    void process(){
+        System.out.println("Order is being served at the table.");
+    }
+    public String toString(){
+        return super.toString() +"\ntableno:"+tableno;
+    }
+
 
 }
